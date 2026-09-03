@@ -1,8 +1,8 @@
-# Alfred Shingai — alfred1805.github.io
+# Alfred Shingai — alfred619.github.io
 
 Personal website for Alfred Shingai — Data Analyst & web enthusiast. Light only, built properly. Contains portfolio + blog (reflections, books, tech).
 
-**Live:** `https://alfred1805.github.io` (once deployed as separate repo `alfred1805.github.io` under `alfredshingai` account — or `https://alfredshingai.github.io/alfred1805.github.io` as project site) and `https://alfredshingai.github.io` remains as project portfolio.
+**Live:** `https://alfred619.github.io` (User site for account `alfred619`) and `https://alfredshingai.github.io` remains as project portfolio. The two repos are separate: `alfredshingai/alfredshingai.github.io` vs `alfred619/alfred619.github.io`.
 
 ## Stack
 - Pure HTML/CSS/JS, no framework
@@ -31,9 +31,13 @@ personal-site/
 4. Test: `python3 -m http.server 8000` → http://localhost:8000
 
 ## Deploy
-- This repo is intended as `alfred1805.github.io` (separate from `alfredshingai.github.io` portfolio)
-- Push to GitHub: `git remote add origin https://github.com/alfredshingai/alfred1805.github.io.git && git push -u origin main`
-- Enable Pages: GitHub → Settings → Pages → Branch `main` / root
+- This repo is intended as `alfred619/alfred619.github.io` (separate User site from `alfredshingai/alfredshingai.github.io` portfolio)
+- Push to GitHub (using new account `alfred619`):
+  ```bash
+  git remote remove origin 2>/dev/null; git remote add origin https://github.com/alfred619/alfred619.github.io.git
+  git push -u origin main
+  ```
+- Enable Pages: GitHub → `alfred619/alfred619.github.io` → Settings → Pages → Branch `main` / root → live at `https://alfred619.github.io`
 - Title is simply `Alfred Shingai` (changed from `Alfred Shingai — Data Analyst & Builder`)
 
 ## License
