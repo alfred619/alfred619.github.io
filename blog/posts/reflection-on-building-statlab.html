@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>What building StatLab Zim taught me about “properly” — Alfred Shingai</title>
+  <meta name="description" content="Draft sample: 19 tests, empty-header edge cases, and why shipping small beats perfect planning. Lessons from building StatLab Zim solo."/>
+  <meta property="og:title" content="What building StatLab Zim taught me about “properly”"/>
+  <meta property="og:description" content="Draft sample post — reflection on building StatLab Zim, testing, and shipping."/>
+  <meta property="og:type" content="article"/>
+  <meta property="og:image" content="https://alfredshingai.github.io/images/StatLab_Zim.png"/>
+  <link rel="icon" href="/favicon.ico"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700&family=DM+Sans:wght@300;400;500&family=Space+Mono:wght@400;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="../../style.css"/>
+</head>
+<body class="blog-theme">
+<div id="scroll-progress" aria-hidden="true"></div>
+<div class="cursor-dot" aria-hidden="true"></div>
+<div class="cursor-ring" aria-hidden="true"></div>
+
+<nav class="site-nav" aria-label="Primary navigation">
+  <div class="nav-inner">
+    <a href="../../#home" class="nav-brand"><img src="/images/personal_logo.png" alt="Alfred Shingai logo" width="32" height="32"><span>Alfred Shingai <span>· Data Analyst</span></span></a>
+    <ul class="nav-links" id="nav-links" role="list">
+      <li><a href="../../#home">Home</a></li>
+      <li><a href="../../#about">About</a></li>
+      <li><a href="../../#works">Works</a></li>
+      <li><a href="../" class="active">Blog</a></li>
+      <li><a href="../../#contact">Contact</a></li>
+    </ul>
+    <button id="nav-toggle" class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="header-spacer" aria-hidden="true"></div>
+
+<article class="post">
+  <header class="post-header">
+    <p style="font-family:JetBrains Mono,monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--blog-accent)">Sample · Draft — Not published work · Career reflection · Streamlit</p>
+    <h1>What building StatLab Zim taught me about “properly”</h1>
+    <div class="post-meta">
+      <span>2026-09-03</span><span>4 min</span><span>Alfred Shingai</span><span>Tags: StatLab Zim, Python, Testing</span>
+    </div>
+    <p style="margin-top:12px;font-size:13px;color:var(--blog-muted);background:var(--blog-accent-soft);padding:8px 12px;border-radius:8px;border:1px solid var(--blog-divider)"><strong>Draft notice:</strong> This is a sample post to demonstrate the blog layout. Replace this file with real content in <code>blog/posts/</code>.</p>
+  </header>
+
+  <nav class="post-toc" aria-label="Table of contents">
+    <h2>On this page</h2>
+    <ol>
+      <li><a href="#properly">The first properly moment</a></li>
+      <li><a href="#tests">19 tests later</a></li>
+      <li><a href="#shipping">Shipping beats polishing</a></li>
+    </ol>
+  </nav>
+
+  <div class="post-content">
+    <p>I wanted to build StatLab Zim <em>properly</em>. Not perfectly — properly. There’s a difference.</p>
+    <p>It’s a Streamlit app for introductory statistics. Upload a CSV, get descriptives, visualizations, and hypothesis tests. Sounds simple. The hard part wasn’t the statistics — it was the <strong>empty file with only a header</strong>.</p>
+    <h2 id="properly">The first properly moment</h2>
+    <p>On day one, <code>pandas.read_csv</code> crashed on an empty file. No rows, no columns. My data-quality summary tried to count <code>inferred_type</code> on an empty DataFrame and threw a <code>KeyError</code>. The app showed a red traceback instead of a helpful message.</p>
+    <p>Properly meant: an empty CSV should show “Header but no data rows. Visualizations will be limited.” — not a stack trace. I added a guard:</p>
+    <pre><code>if type_summary.empty:
+    n_numeric = n_categorical = 0
+    # …</code></pre>
+    <p>Small change, big kindness.</p>
+    <blockquote>Properly is not about adding features. It’s about handling the boring edge so the human on the other side feels respected.</blockquote>
+    <h2 id="tests">19 tests later</h2>
+    <p>I wrote 19 pytest tests before I felt comfortable shipping: row/col counts, missing-value %, duplicate detection, numeric detection, descriptive spot-checks with <code>pytest.approx</code>, and — crucially — empty/invalid file handling. The tests caught a string-dtype bug where <code>is_object_dtype</code> returned <code>False</code> for pandas 2’s new <code>StringDtype</code>.</p>
+    <p>In Harare, we say <em>“Chitsva charimutsoka”</em> — what’s new is in the feet, you learn by walking. The tests were the walking.</p>
+    <h2 id="shipping">Shipping beats polishing</h2>
+    <p>I could have added a database, user accounts, a dark mode. I chose light only for the blog — warm paper <code>#F5EECD</code>, ink <code>#362C2C</code>, accent <code>#ED680E</code>. The same palette you see here. Light is honest; you can’t hide bad spacing in beige.</p>
+    <p>StatLab Zim is live at <a href="https://statlab-zim.streamlit.app" target="_blank" rel="noopener noreferrer">statlab-zim.streamlit.app</a> and code at <a href="https://github.com/alfredshingai/statlab-zim" target="_blank" rel="noopener noreferrer">github.com/alfredshingai/statlab-zim</a>. It still has rough edges — kaleido needs Chrome for PNG exports. But it handles an empty CSV gracefully. That’s properly enough for today.</p>
+    <p>— Alfred, second coffee, probably.</p>
+  </div>
+
+  <div class="share-row">
+    <span style="font-family:JetBrains Mono,monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--blog-muted)">Share:</span>
+    <button class="share-btn" onclick="navigator.clipboard.writeText(window.location.href).then(()=>{this.textContent='Copied!';setTimeout(()=>this.textContent='Copy link',2000)})">Copy link</button>
+    <a class="share-btn" href="https://twitter.com/intent/tweet?text=What%20building%20StatLab%20Zim%20taught%20me%20about%20%E2%80%9Cproperly%E2%80%9D&url=https://alfredshingai.github.io/blog/posts/reflection-on-building-statlab.html" target="_blank" rel="noopener noreferrer">Share on X</a>
+    <a class="share-btn" href="https://www.linkedin.com/sharing/share-offsite/?url=https://alfredshingai.github.io/blog/posts/reflection-on-building-statlab.html" target="_blank" rel="noopener noreferrer">Share on LinkedIn</a>
+  </div>
+
+  <nav class="post-nav" aria-label="Post navigation">
+    <a href="tech-lean-web-components.html">← Previous: Lean Web Components</a>
+    <a href="reading-atomic-habits.html">Next: Atomic Habits →</a>
+  </nav>
+  <p style="margin-top:24px;font-size:12px;color:var(--blog-muted)">Draft sample — <a href="../" style="color:var(--blog-accent)">back to blog index</a> · <a href="../../#works" style="color:var(--blog-accent)">view StatLab Zim</a></p>
+</article>
+
+<footer class="site-footer">
+  <span>© 2026 Alfred Shingai</span>
+  <span><a href="../">Blog</a> · <a href="../../">Home</a></span>
+  <span>Light only · Built properly</span>
+</footer>
+
+<script>
+const toggle=document.getElementById('nav-toggle');const links=document.getElementById('nav-links');
+toggle.addEventListener('click',()=>{const open=links.classList.toggle('open');toggle.classList.toggle('open',open);toggle.setAttribute('aria-expanded',open)});
+const prog=document.getElementById('scroll-progress');
+window.addEventListener('scroll',()=>{const h=document.documentElement;const pct=(h.scrollTop/(h.scrollHeight-h.clientHeight))*100;prog.style.width=pct+'%'},{passive:true});
+const dot=document.querySelector('.cursor-dot'),ring=document.querySelector('.cursor-ring');
+const isTouch=window.matchMedia('(pointer: coarse)').matches;
+const prefersReduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+if(!isTouch && !prefersReduced && dot && ring){
+  document.body.classList.add('has-custom-cursor');
+  let mx=0,my=0,rx=0,ry=0;
+  document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;dot.style.transform=`translate(${mx}px,${my}px)`});
+  (function loop(){rx+=(mx-rx)*0.15;ry+=(my-ry)*0.15;ring.style.transform=`translate(${rx}px,${ry}px)`;requestAnimationFrame(loop)})();
+  document.addEventListener('mouseleave',()=>{dot.style.opacity='0';ring.style.opacity='0'});
+  document.addEventListener('mouseenter',()=>{dot.style.opacity='1';ring.style.opacity='1'});
+  document.querySelectorAll('a,button').forEach(el=>{
+    el.addEventListener('mouseenter',()=>{dot.classList.add('hover');ring.classList.add('hover')});
+    el.addEventListener('mouseleave',()=>{dot.classList.remove('hover');ring.classList.remove('hover')});
+  });
+}else{if(dot) dot.style.display='none';if(ring) ring.style.display='none'}
+</script>
+</body>
+</html>

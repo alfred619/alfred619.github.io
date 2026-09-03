@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Atomic Habits — notes for an analyst who loves systems — Alfred Shingai</title>
+  <meta name="description" content="Draft sample: notes on Atomic Habits for an analyst who loves systems — 1% improvements in data cleaning and shipping."/>
+  <meta property="og:title" content="Atomic Habits — notes for an analyst"/>
+  <meta property="og:description" content="Draft sample post — book notes."/>
+  <meta property="og:type" content="article"/>
+  <meta property="og:image" content="https://alfredshingai.github.io/images/Bike_Sales_Dashboard.png"/>
+  <link rel="icon" href="/favicon.ico"/>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700&family=DM+Sans:wght@300;400;500&family=Space+Mono:wght@400;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="../../style.css"/>
+</head>
+<body class="blog-theme">
+<div id="scroll-progress" aria-hidden="true"></div>
+<div class="cursor-dot" aria-hidden="true"></div>
+<div class="cursor-ring" aria-hidden="true"></div>
+
+<nav class="site-nav" aria-label="Primary navigation">
+  <div class="nav-inner">
+    <a href="../../#home" class="nav-brand"><img src="/images/personal_logo.png" alt="Alfred Shingai logo" width="32" height="32"><span>Alfred Shingai <span>· Data Analyst</span></span></a>
+    <ul class="nav-links" id="nav-links" role="list">
+      <li><a href="../../#home">Home</a></li>
+      <li><a href="../../#about">About</a></li>
+      <li><a href="../../#works">Works</a></li>
+      <li><a href="../" class="active">Blog</a></li>
+      <li><a href="../../#contact">Contact</a></li>
+    </ul>
+    <button id="nav-toggle" class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="header-spacer" aria-hidden="true"></div>
+
+<article class="post">
+  <header class="post-header">
+    <p style="font-family:JetBrains Mono,monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--blog-accent)">Sample · Draft — Not published work · Book · Books</p>
+    <h1>Atomic Habits — notes for an analyst who loves systems</h1>
+    <div class="post-meta"><span>2026-08-21</span><span>6 min</span><span>Alfred Shingai</span><span>Tags: Books, Reflections, Systems</span></div>
+    <p style="margin-top:12px;font-size:13px;color:var(--blog-muted);background:var(--blog-accent-soft);padding:8px 12px;border-radius:8px;border:1px solid var(--blog-divider)"><strong>Draft notice:</strong> Sample post — replace with real book notes in <code>blog/posts/</code>.</p>
+  </header>
+
+  <nav class="post-toc" aria-label="Table of contents">
+    <h2>On this page</h2>
+    <ol>
+      <li><a href="#one-percent">1% in the cleaning room</a></li>
+      <li><a href="#identity">Identity, not outcome</a></li>
+      <li><a href="#system">System for reading</a></li>
+    </ol>
+  </nav>
+
+  <div class="post-content">
+    <p>I read <em>Atomic Habits</em> between Power Query refreshes. The core idea is simple: you don’t rise to your goals, you fall to your systems. As a data analyst, that landed.</p>
+    <h2 id="one-percent">1% in the cleaning room</h2>
+    <p>Clear argues for 1% daily improvements. My 1% looked like this: one Power Query step properly named, one DAX measure with a comment, one commit message that actually explains <em>why</em>. No heroic refactors — just <code>is_numeric_series</code> handling <code>StringDtype</code> today, <code>duplicate_row_count</code> tomorrow.</p>
+    <blockquote>“Every action is a vote for the type of person you wish to become.” — I started voting for “person who writes tests before features.”</blockquote>
+    <h2 id="identity">Identity, not outcome</h2>
+    <p>The book reframes habits around identity. I’m not trying to “finish StatLab Zim.” I’m becoming someone who ships small, tested, documented tools. That identity made it easier to choose 7 CSS variables over a framework, light-only over dark-mode complexity, and a single-column work stack over a card grid.</p>
+    <h2 id="system">System for reading</h2>
+    <p>My system now: 30 minutes each morning, one chapter, one note in a CSV (yes, a CSV): <code>book,chapter,insight,action</code>. No Goodreads streak, just a file I can query with pandas. Analyst’s habit.</p>
+    <p>If you’ve read it — what 1% are you voting for this week? <a href="mailto:tinonetsanaa@gmail.com">Tell me</a>.</p>
+    <p>Next up: <em>Deep Work</em> — because warm paper needs focus.</p>
+  </div>
+
+  <div class="share-row">
+    <span style="font-family:JetBrains Mono,monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--blog-muted)">Share:</span>
+    <button class="share-btn" onclick="navigator.clipboard.writeText(window.location.href).then(()=>{this.textContent='Copied!';setTimeout(()=>this.textContent='Copy link',2000)})">Copy link</button>
+    <a class="share-btn" href="https://twitter.com/intent/tweet?text=Atomic%20Habits%20notes%20for%20an%20analyst&url=https://alfredshingai.github.io/blog/posts/reading-atomic-habits.html" target="_blank" rel="noopener noreferrer">Share on X</a>
+    <a class="share-btn" href="https://www.linkedin.com/sharing/share-offsite/?url=https://alfredshingai.github.io/blog/posts/reading-atomic-habits.html" target="_blank" rel="noopener noreferrer">Share on LinkedIn</a>
+  </div>
+
+  <nav class="post-nav" aria-label="Post navigation">
+    <a href="reflection-on-building-statlab.html">← Previous: StatLab reflection</a>
+    <a href="tech-lean-web-components.html">Next: Lean Web Components →</a>
+  </nav>
+  <p style="margin-top:24px;font-size:12px;color:var(--blog-muted)">Draft sample — <a href="../" style="color:var(--blog-accent)">back to blog index</a></p>
+</article>
+
+<footer class="site-footer">
+  <span>© 2026 Alfred Shingai</span>
+  <span><a href="../">Blog</a> · <a href="../../">Home</a></span>
+  <span>Light only · Built properly</span>
+</footer>
+
+<script>
+const toggle=document.getElementById('nav-toggle');const links=document.getElementById('nav-links');
+toggle.addEventListener('click',()=>{const open=links.classList.toggle('open');toggle.classList.toggle('open',open);toggle.setAttribute('aria-expanded',open)});
+const prog=document.getElementById('scroll-progress');
+window.addEventListener('scroll',()=>{const h=document.documentElement;const pct=(h.scrollTop/(h.scrollHeight-h.clientHeight))*100;prog.style.width=pct+'%'},{passive:true});
+const dot=document.querySelector('.cursor-dot'),ring=document.querySelector('.cursor-ring');
+const isTouch=window.matchMedia('(pointer: coarse)').matches;
+const prefersReduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+if(!isTouch && !prefersReduced && dot && ring){
+  document.body.classList.add('has-custom-cursor');
+  let mx=0,my=0,rx=0,ry=0;
+  document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;dot.style.transform=`translate(${mx}px,${my}px)`});
+  (function loop(){rx+=(mx-rx)*0.15;ry+=(my-ry)*0.15;ring.style.transform=`translate(${rx}px,${ry}px)`;requestAnimationFrame(loop)})();
+  document.addEventListener('mouseleave',()=>{dot.style.opacity='0';ring.style.opacity='0'});
+  document.addEventListener('mouseenter',()=>{dot.style.opacity='1';ring.style.opacity='1'});
+  document.querySelectorAll('a,button').forEach(el=>{
+    el.addEventListener('mouseenter',()=>{dot.classList.add('hover');ring.classList.add('hover')});
+    el.addEventListener('mouseleave',()=>{dot.classList.remove('hover');ring.classList.remove('hover')});
+  });
+}else{if(dot) dot.style.display='none';if(ring) ring.style.display='none'}
+</script>
+</body>
+</html>

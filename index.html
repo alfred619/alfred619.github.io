@@ -2,168 +2,361 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="description" content="Alfred Shingai — Data Analyst & web enthusiast. I build clean web things and write about reflections, books, and tech."/>
-  <meta property="og:title" content="Alfred Shingai"/>
-  <meta property="og:description" content="I build web things, properly. Reflections, books, and tech — documented in the open."/>
-  <meta property="og:type" content="website"/>
-  <meta property="og:url" content="https://alfred619.github.io"/>
-  <meta name="theme-color" content="#f5f1e8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Alfred Shingai</title>
+  <meta name="description" content="Alfred Shingai — Data Analyst specializing in Python, Power BI, Excel and web development. Explore StatLab Zim, data projects, and notes on learning, Streamlit and career."/>
+  <meta property="og:title" content="Alfred Shingai"/>
+  <meta property="og:description" content="Portfolio of Alfred Shingai — data projects, StatLab Zim, and blog on data science, Python and Streamlit."/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content="https://alfredshingai.github.io/"/>
+  <meta property="og:image" content="https://alfredshingai.github.io/images/StatLab_Zim.png"/>
+  <meta property="og:site_name" content="Alfred Shingai"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="Alfred Shingai"/>
+  <meta name="twitter:description" content="Data Analyst — Python, Power BI, Streamlit. Featured: StatLab Zim."/>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&family=JetBrains+Mono:wght@100..800&display=swap" rel="stylesheet"/>
-  <link rel="icon" href="data:,">
-  <link rel="stylesheet" href="assets/styles.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&family=Space+Mono:wght@400;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet"/>
+  <link rel="icon" href="/favicon.ico"/>
+  <link rel="stylesheet" href="style.css"/>
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Person",
+    "name":"Alfred Shingai",
+    "url":"https://alfredshingai.github.io/",
+    "jobTitle":"Data Analyst",
+    "sameAs":["https://github.com/alfredshingai","https://www.linkedin.com/in/alfred-shingai"]
+  }
+  </script>
 </head>
 <body>
+<div id="scroll-progress" aria-hidden="true"></div>
+<div class="cursor-dot" aria-hidden="true"></div>
+<div class="cursor-ring" aria-hidden="true"></div>
 
-<header class="site-header">
-  <div class="header-inner">
-    <a href="/" class="brand">
-      <span class="brand-dot"></span>
-      <span class="brand-text"><span><span>Alfred</span><span>alfredshingai</span></span></span>
+<nav class="site-nav" aria-label="Primary navigation">
+  <div class="nav-inner">
+    <a href="#home" class="nav-brand" aria-label="Alfred Shingai home">
+      <img src="/images/personal_logo.png" alt="Alfred Shingai logo" width="32" height="32" loading="eager">
+      <span>Alfred Shingai <span>· Data Analyst</span></span>
     </a>
-    <nav class="nav-links">
-      <a href="#work" class="hide-mobile">Work</a>
-      <a href="#story" class="hide-mobile">Story</a>
-      <a href="blog/">Blog</a>
-    </nav>
-    <a href="mailto:tinonetsanaa@gmail.com" class="email-pill">Email me</a>
+    <ul class="nav-links" id="nav-links" role="list">
+      <li><a href="#home" data-nav="home" class="active">Home</a></li>
+      <li><a href="#about" data-nav="about">About</a></li>
+      <li><a href="#works" data-nav="works">Works</a></li>
+      <li><a href="blog/" data-nav="blog">Blog</a></li>
+      <li><a href="#contact" data-nav="contact">Contact</a></li>
+    </ul>
+    <a href="#contact" class="nav-cta hide-mobile">Contact Me</a>
+    <button id="nav-toggle" class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
+      <span></span><span></span><span></span>
+    </button>
   </div>
-</header>
-<div class="header-spacer"></div>
+</nav>
+<div class="header-spacer" aria-hidden="true"></div>
 
-<main>
-<section class="hero">
-  <div>
-    <p class="hero-eyebrow">Data Analyst · Web enthusiast · Harare</p>
-    <h1>Built properly.<br><span class="accent">One commit at a time.</span></h1>
-    <p class="hero-sub">I'm Alfred. I design and build web things that are <strong>clean, fast, and honest</strong> — dashboards, tools, and small products that help people understand their data. I also write about reflections, books, and the tech I learn along the way.</p>
+<!-- Home / Hero -->
+<header class="hero" id="home">
+  <div class="hero-text">
+    <p class="hero-eyebrow">Data Analyst · Web enthusiast · Harare, Zimbabwe</p>
+    <h1>Data that informs.<br><em>Products that ship.</em></h1>
+    <p class="hero-sub">
+      I'm <strong>Alfred Shingai</strong>, a data-focused developer who turns raw exports into clear, decision-ready products.
+      I build with <strong>Python, Streamlit, Power BI and modern web</strong> — from cleaning messy CSVs to shipping <strong>StatLab Zim</strong> on Streamlit Cloud. I keep things minimal, accessible, and properly tested.
+    </p>
     <div class="hero-actions">
-      <a href="#work" class="btn-primary">See the work</a>
-      <a href="blog/" class="btn-outline">Read the blog</a>
+      <a href="#works" class="btn-primary">View My Work</a>
+      <a href="#contact" class="btn-outline">Contact Me</a>
+      <a href="https://statlab-zim.streamlit.app" class="btn-outline btn-highlight" target="_blank" rel="noopener noreferrer">Try StatLab Zim ↗</a>
+    </div>
+    <div class="hero-stats" aria-label="Highlights">
+      <div><div class="stat-num">6+</div><div class="stat-label">Shipped projects</div></div>
+      <div><div class="stat-num">19</div><div class="stat-label">Pytest tests in StatLab Zim</div></div>
+      <div><div class="stat-num">BSc</div><div class="stat-label">Applied Statistics, University of Zimbabwe — Final Year</div></div>
     </div>
   </div>
-  <div class="hero-portrait">
-    <img src="https://via.placeholder.com/640x800/fcfaf3/6b6151?text=Alfred" alt="Portrait of Alfred Shingai" width="640" height="800">
-    <p class="hero-caption">Second coffee, probably. — Harare, Zimbabwe</p>
+  <div class="hero-visual">
+    <div class="photo-wrap">
+      <div class="photo-frame">
+        <img src="/images/personal_logo.png" alt="Portrait of Alfred Shingai, Data Analyst" width="340" height="400" loading="eager">
+      </div>
+      <div class="photo-badge" aria-hidden="true"><span class="badge-dot"></span> Available for work</div>
+    </div>
   </div>
+</header>
+
+<!-- Featured Work (Home) -->
+<section class="page-section" id="featured" aria-labelledby="featured-title">
+  <div class="section-label">Featured work</div>
+  <h2 class="section-title" id="featured-title">Built properly. Shipped.</h2>
+  <p class="section-subtitle">A concise highlight — see <a href="#works" style="color:var(--primary);text-decoration:underline;text-underline-offset:3px">all works</a> below. StatLab Zim is featured as my most complete product.</p>
+  <article class="work-card featured" data-category="Data Science Web Development Tools" data-cursor="Live App">
+    <div class="work-img-wrap">
+      <img class="work-img tall" src="images/StatLab_Zim.png" alt="StatLab Zim interface showing descriptive statistics and visualizations" width="1200" height="700" loading="lazy">
+      <div class="work-overlay"><span class="work-overlay-text">Live on Streamlit Cloud</span></div>
+    </div>
+    <div class="work-body">
+      <span class="work-tag">Featured · Data Science · Web Development · Tools</span>
+      <h3 class="work-title">StatLab Zim — Interactive Statistical Analysis</h3>
+      <p class="work-desc"><strong>Problem:</strong> Introductory statistics tools are often closed, complex, or lecture-only. <strong>Solution:</strong> A browser app where you upload any CSV and get data-quality checks, 13-metric descriptive summaries, 6 interactive Plotly charts, and 5 hypothesis tests with plain-language interpretations — plus CSV/PNG exports.</p>
+      <div class="work-tools" aria-label="Technologies">
+        <span class="tool-tag">Streamlit</span><span class="tool-tag">Python</span><span class="tool-tag">Pandas</span><span class="tool-tag">SciPy</span><span class="tool-tag">Plotly</span><span class="tool-tag">Pytest</span>
+      </div>
+      <div class="work-links">
+        <a href="https://statlab-zim.streamlit.app" class="work-link primary" target="_blank" rel="noopener noreferrer">Live Demo ↗</a>
+        <a href="https://github.com/alfredshingai/statlab-zim" class="work-link" target="_blank" rel="noopener noreferrer">GitHub →</a>
+      </div>
+    </div>
+  </article>
 </section>
 
-<section id="work" class="section">
-  <div class="section-label">Selected work</div>
-  <h2>Products, analysis, <span class="accent">and tools.</span></h2>
-  <p class="lead">Everything here is live, documented, or open source — and all of it was designed, built, and shipped by me alone.</p>
+<div class="divider" aria-hidden="true"></div>
 
-  <div class="work-grid">
-    <article class="work-card wide">
-      <div class="work-card-img">
-        <div style="background:linear-gradient(135deg, #b6491f, #e07a4f);width:100%;height:100%;border-radius:8px;display:flex;align-items:center;justify-content:center;color:white;font-weight:700;font-size:18px">StatLab Zim</div>
+<!-- About -->
+<section class="page-section" id="about" aria-labelledby="about-title">
+  <div class="section-label">About</div>
+  <h2 class="section-title" id="about-title">A bit about me</h2>
+  <div class="about-grid">
+    <div class="about-photo">
+      <img src="/images/personal_logo.png" alt="Alfred Shingai portrait" width="480" height="560" loading="lazy">
+    </div>
+    <div class="about-bio">
+      <p>
+        I'm <strong>Alfred Shingai</strong>, a final-year <strong>BSc Applied Statistics</strong> student at the University of Zimbabwe and a data analyst who enjoys web development.
+        I work across the analytics process — cleaning and transforming data with <strong>Python (Pandas, NumPy, SciPy)</strong>, building interactive dashboards in <strong>Power BI</strong> with <strong>DAX and Power Query</strong>, and creating structured reports in <strong>Excel</strong> with Pivot Tables and XLOOKUP.
+      </p>
+      <p>
+        My latest product is <strong>StatLab Zim</strong> (Streamlit Cloud) — an open-source lab for descriptive stats, visualizations, and hypothesis testing. It handles messy real-world CSVs, shows assumptions and warnings, and exports results. I keep my practice lean: warm paper, strong typography, accessible markup, and 19 pytest tests before shipping.
+      </p>
+      <p>
+        <strong>Interests:</strong> data storytelling, Streamlit & modern web components, statistical literacy for non-technical audiences, and building small tools that ship.
+        <br><strong>Currently:</strong> seeking remote or in-office Data Analyst roles.
+      </p>
+      <div style="margin-top:20px;display:flex;gap:12px;flex-wrap:wrap">
+        <a href="assets/cv/alfred-shingai-cv.pdf" class="btn-primary" target="_blank" rel="noopener">View CV</a>
+        <a href="https://github.com/alfredshingai" class="btn-outline" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
       </div>
-      <div class="work-card-body">
-        <h3>StatLab Zim <span class="work-meta">Open source, MIT</span></h3>
-        <p>An interactive lab for introductory statistics. Upload a CSV → get quality checks, 13-metric descriptives, 6 Plotly charts, and 5 hypothesis tests with plain-language interpretations. 19 tests, CSV/PNG exports.</p>
-        <div class="work-links"><a href="https://statlab-zim.streamlit.app" target="_blank" rel="noreferrer">statlab-zim.streamlit.app ↗</a><a href="https://github.com/alfredshingai/statlab-zim" target="_blank" rel="noreferrer">GitHub ↗</a></div>
-      </div>
-    </article>
-
-    <article class="work-card narrow">
-      <div class="work-card-img" style="background:#f5f1e8;display:flex;align-items:center;justify-content:center;color:#6b6151;font-family:monospace;font-size:12px">Power BI · Excel · Python</div>
-      <div class="work-card-body">
-        <h3>Bike Sales</h3>
-        <p>1,000 customers analyzed. High-income, middle-aged professionals + Pacific region = 59% conversion. Built to answer in 10 seconds.</p>
-        <div class="work-links"><a href="https://github.com/alfredshingai/Bike_Sales_Analysis_Portfolio" target="_blank" rel="noreferrer">View case study ↗</a></div>
-      </div>
-    </article>
-
-    <article class="work-card narrow">
-      <div class="work-card-img" style="background:#fcfaf3;display:flex;align-items:center;justify-content:center;color:#6b6151;font-family:monospace">Flight Status Dashboard — Power BI</div>
-      <div class="work-card-body">
-        <h3>Flight Status</h3>
-        <p>U.S. delays, cancellations, on-time rates. One filter to answer “which airline to rebook?”</p>
-        <div class="work-links"><a href="https://github.com/alfredshingai/Flight_Status_Dashboard" target="_blank" rel="noreferrer">View case study ↗</a></div>
-      </div>
-    </article>
-
-    <article class="work-card wide">
-      <div class="work-card-img" style="background:linear-gradient(to right, #f5f1e8, #e1d9c6);display:flex;align-items:center;justify-content:center;color:#1e1a13;font-weight:600">Web Components — Lean & Fast</div>
-      <div class="work-card-body">
-        <h3>Personal Site <span class="work-meta">This site</span></h3>
-        <p>Light-only, no framework bloat. Space Grotesk + JetBrains Mono, 7 CSS variables, 12-col grid, blog as static HTML. Built properly.</p>
-        <div class="work-links"><a href="blog/">Read the build notes ↗</a></div>
-      </div>
-    </article>
-  </div>
-</section>
-
-<section id="story" class="section">
-  <div style="display:grid;gap:48px">
-    <div class="story-grid">
-      <div>
-        <div class="section-label">Story</div>
-        <h2>Curious, <span class="accent">not just qualified.</span></h2>
-        <p class="lead">I study Applied Statistics at the University of Zimbabwe — final year. But I learned to build on nights and weekends.</p>
-      </div>
-      <div class="timeline">
-        <div class="timeline-row">
+      <div class="timeline" aria-label="Experience timeline">
+        <div class="timeline-item">
           <div class="timeline-year">2024 — Present</div>
           <div>
             <h3>Applied Statistics, University of Zimbabwe</h3>
-            <p class="timeline-role">BSc Final Year</p>
-            <p>Regression, inference, experimental design. StatLab Zim started as a study aid for classmates — now it’s live.</p>
+            <div class="timeline-role">BSc Final Year</div>
+            <p>Statistical inference, regression, experimental design. Built StatLab Zim as capstone.</p>
           </div>
         </div>
-        <div class="timeline-row">
+        <div class="timeline-item">
           <div class="timeline-year">2023 — 2024</div>
           <div>
-            <h3>Data Analyst Internships</h3>
-            <p class="timeline-role">Power BI · Excel · Python</p>
-            <p>Two placements. Cleaned 10k+ rows, modeled with DAX, shipped dashboards that replaced manual weekly reports.</p>
+            <h3>Data Analyst Internships · 2 placements</h3>
+            <div class="timeline-role">Power BI · Excel · Python</div>
+            <p>Cleaned 10k+ row retail/finance datasets, modeled with DAX/Power Query, shipped dashboards that replaced manual reporting.</p>
           </div>
         </div>
-        <div class="timeline-row">
-          <div class="timeline-year">Since 2023</div>
-          <div>
-            <h3>Web Development, properly</h3>
-            <p class="timeline-role">Harare · Remote</p>
-            <p>I enjoy the web because it’s immediate. You ship, you learn, you iterate. This site is my practice of that — no dark mode, no noise, just warm paper and clear words.</p>
-          </div>
-        </div>
+      </div>
+      <h3 style="font-family:'Syne',sans-serif;font-size:14px;font-weight:700;margin-top:32px;letter-spacing:-0.01em">What I work with</h3>
+      <div class="skills-row" style="margin-top:12px">
+        <span class="skill-chip">Python</span><span class="skill-chip">Pandas</span><span class="skill-chip">Streamlit</span><span class="skill-chip">SciPy</span><span class="skill-chip">Power BI</span><span class="skill-chip">DAX</span><span class="skill-chip">Excel</span><span class="skill-chip">Plotly</span><span class="skill-chip">Git</span>
       </div>
     </div>
   </div>
 </section>
 
-<section class="section" style="border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--surface)">
-  <div style="max-width:720px;margin:0 auto;text-align:center">
-    <h2 style="font-size:32px;letter-spacing:-0.04em">Writing, <span class="accent">in the open.</span></h2>
-    <p class="lead" style="margin:16px auto 0">Reflections on building, books that shift perspective, and tech notes I wish I’d found earlier. Light, honest, no newsletter pop-up.</p>
-    <div style="margin-top:24px;display:flex;justify-content:center;gap:12px;flex-wrap:wrap">
-      <a href="blog/" class="btn-primary">Visit the blog</a>
-      <a href="blog/#reflections" class="btn-outline">Reflections</a>
-      <a href="blog/#books" class="btn-outline">Books</a>
+<div class="divider" aria-hidden="true"></div>
+
+<!-- Works -->
+<section class="page-section" id="works" aria-labelledby="works-title">
+  <div class="section-label">Works</div>
+  <h2 class="section-title" id="works-title">Portfolio</h2>
+  <p class="section-subtitle">All projects below are real work from <a href="https://alfredshingai.github.io" style="color:var(--primary);text-decoration:underline;text-underline-offset:3px">alfredshingai.github.io</a>. No invented projects. Filter by type.</p>
+  <div class="work-filters" role="group" aria-label="Filter works">
+    <button class="filter-btn active" data-filter="all" aria-pressed="true">All</button>
+    <button class="filter-btn" data-filter="Data Science" aria-pressed="false">Data Science</button>
+    <button class="filter-btn" data-filter="Web Development" aria-pressed="false">Web Development</button>
+    <button class="filter-btn" data-filter="Tools" aria-pressed="false">Tools</button>
+  </div>
+  <div class="works-grid" id="works-grid">
+    <article class="work-card featured" data-category="Data Science Web Development Tools" data-cursor="Live App">
+      <div class="work-img-wrap">
+        <img class="work-img tall" src="images/StatLab_Zim.png" alt="StatLab Zim app showing statistical analysis interface" width="1200" height="700" loading="lazy">
+        <div class="work-overlay"><span class="work-overlay-text">Featured</span></div>
+      </div>
+      <div class="work-body">
+        <span class="work-tag">Featured · Web Development · Data Science</span>
+        <h3 class="work-title">StatLab Zim — Interactive Statistical Analysis</h3>
+        <p class="work-desc">Upload a CSV → get data-quality profiling, 13-metric descriptives, 6 Plotly charts, and 5 tests (Pearson, Spearman, regression, t-test, chi-square) with plain-language decisions and CSV/PNG exports.</p>
+        <div class="work-tools"><span class="tool-tag">Streamlit</span><span class="tool-tag">Python</span><span class="tool-tag">SciPy</span><span class="tool-tag">Plotly</span><span class="tool-tag">Pytest</span></div>
+        <div class="work-links">
+          <a href="https://statlab-zim.streamlit.app" class="work-link primary" target="_blank" rel="noopener noreferrer">Live Demo ↗</a>
+          <a href="https://github.com/alfredshingai/statlab-zim" class="work-link" target="_blank" rel="noopener noreferrer">GitHub →</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="work-card" data-category="Data Science Tools" data-cursor="Case Study">
+      <div class="work-img-wrap"><img class="work-img" src="images/Bike_Sales_Dashboard.png" alt="Bike sales dashboard showing customer and regional performance" width="600" height="340" loading="lazy"></div>
+      <div class="work-body">
+        <span class="work-tag">Data Science</span>
+        <h3 class="work-title">Bike Sales Analysis</h3>
+        <p class="work-desc">Analyzed 1,000 customer records. Found high-income, middle-aged professionals as the strongest segment; Pacific region led with ~59% conversion — shaping targeting.</p>
+        <div class="work-tools"><span class="tool-tag">Python</span><span class="tool-tag">Pandas</span><span class="tool-tag">Excel</span><span class="tool-tag">Power BI</span><span class="tool-tag">DAX</span></div>
+        <div class="work-links"><a href="https://github.com/alfredshingai/Bike_Sales_Analysis_Portfolio" class="work-link" target="_blank" rel="noopener noreferrer">GitHub →</a></div>
+      </div>
+    </article>
+
+    <article class="work-card" data-category="Data Science" data-cursor="ML">
+      <div class="work-img-wrap"><img class="work-img" src="images/Bank_Customer_Churn.png" alt="Bank customer churn analysis visualization" width="600" height="340" loading="lazy"></div>
+      <div class="work-body">
+        <span class="work-tag">Data Science</span>
+        <h3 class="work-title">Bank Customer Churn Prediction</h3>
+        <p class="work-desc">End-to-end pipeline: EDA → feature engineering → gradient boosting. AUC 0.868 to identify at-risk customers.</p>
+        <div class="work-tools"><span class="tool-tag">Python</span><span class="tool-tag">EDA</span><span class="tool-tag">Gradient Boosting</span></div>
+        <div class="work-links"><a href="https://github.com/alfredshingai/bank-churn-prediction" class="work-link" target="_blank" rel="noopener noreferrer">GitHub →</a></div>
+      </div>
+    </article>
+
+    <article class="work-card" data-category="Data Science Tools" data-cursor="Dashboard">
+      <div class="work-img-wrap"><img class="work-img" src="images/Flight_Status_Dashboard.png" alt="Flight status dashboard comparing airline performance" width="600" height="340" loading="lazy"></div>
+      <div class="work-body">
+        <span class="work-tag">Data Science · Tools</span>
+        <h3 class="work-title">Flight Status Dashboard</h3>
+        <p class="work-desc">Interactive dashboard for U.S. airline and airport performance across delays, cancellations, and on-time rates — one filter to answer rebooking decisions.</p>
+        <div class="work-tools"><span class="tool-tag">Power BI</span><span class="tool-tag">DAX</span><span class="tool-tag">Power Query</span></div>
+        <div class="work-links"><a href="https://github.com/alfredshingai/Flight_Status_Dashboard" class="work-link" target="_blank" rel="noopener noreferrer">GitHub →</a></div>
+      </div>
+    </article>
+
+    <article class="work-card" data-category="Data Science Tools" data-cursor="Report">
+      <div class="work-img-wrap"><img class="work-img" src="images/CocaCola USA Retailer Analysis.png" alt="Coca-Cola USA retailer analysis dashboard" width="600" height="340" loading="lazy"></div>
+      <div class="work-body">
+        <span class="work-tag">Data Science</span>
+        <h3 class="work-title">Coca-Cola USA Retailer Analysis</h3>
+        <p class="work-desc">Analyzed 9,648 retailer invoices (2022–2023) to uncover revenue trends, brand profitability, regional distribution, and retailer efficiency.</p>
+        <div class="work-tools"><span class="tool-tag">Excel</span><span class="tool-tag">Power Query</span><span class="tool-tag">Data Cleaning</span></div>
+        <div class="work-links"><a href="https://github.com/alfredshingai/CocaCola_USA_Retailer_Analysis" class="work-link" target="_blank" rel="noopener noreferrer">GitHub →</a></div>
+      </div>
+    </article>
+
+    <article class="work-card" data-category="Data Science Tools" data-cursor="Dashboard">
+      <div class="work-img-wrap"><img class="work-img" src="images/Kevin_Cookie_Company_Sales_Dashboard.png" alt="Kevin Cookie Company sales dashboard" width="600" height="340" loading="lazy"></div>
+      <div class="work-body">
+        <span class="work-tag">Data Science · Tools</span>
+        <h3 class="work-title">Kevin Cookie Company Sales Analysis</h3>
+        <p class="work-desc">Prototyped KPIs in pandas, implemented in Excel, delivered Power BI dashboard exploring 2020 international markets.</p>
+        <div class="work-tools"><span class="tool-tag">Power BI</span><span class="tool-tag">DAX</span><span class="tool-tag">Pandas</span></div>
+        <div class="work-links"><a href="https://github.com/alfredshingai/Kevin-Cookie-Company-Sales-Analysis-2020" class="work-link" target="_blank" rel="noopener noreferrer">GitHub →</a></div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<div class="divider" aria-hidden="true"></div>
+
+<!-- Blog preview -->
+<section class="page-section" id="blog" aria-labelledby="blog-title">
+  <div class="section-label">Blog</div>
+  <h2 class="section-title" id="blog-title">Latest from the blog</h2>
+  <p class="section-subtitle">Notes on data science learning, project case studies, Streamlit, Python, and career reflections. <a href="blog/" style="color:var(--primary);text-decoration:underline;text-underline-offset:3px">View all posts</a></p>
+  <div class="blog-preview-grid">
+    <article class="blog-preview-card">
+      <div class="blog-meta"><span>2026-09-03</span><span>Career reflection</span><span>4 min</span></div>
+      <h3><a href="blog/posts/reflection-on-building-statlab.html">What building StatLab Zim taught me about “properly”</a></h3>
+      <p>19 tests, empty-header edge cases, and why Phoenix-style shipping beats perfect planning.</p>
+      <a href="blog/posts/reflection-on-building-statlab.html" class="read-more">Read more →</a>
+    </article>
+    <article class="blog-preview-card">
+      <div class="blog-meta"><span>2026-08-21</span><span>Book note</span><span>6 min</span></div>
+      <h3><a href="blog/posts/reading-atomic-habits.html">Atomic Habits — notes for an analyst who loves systems</a></h3>
+      <p>How 1% improvements mapped to my data cleaning workflow and shipping small.</p>
+      <a href="blog/posts/reading-atomic-habits.html" class="read-more">Read more →</a>
+    </article>
+    <article class="blog-preview-card">
+      <div class="blog-meta"><span>2026-08-10</span><span>Tech</span><span>5 min</span></div>
+      <h3><a href="blog/posts/tech-lean-web-components.html">Lean Web Components: warm paper, 7 variables, no framework</a></h3>
+      <p>Why I rebuilt with 7 CSS variables, Space Grotesk + JetBrains Mono, and no build step.</p>
+      <a href="blog/posts/tech-lean-web-components.html" class="read-more">Read more →</a>
+    </article>
+  </div>
+  <div style="text-align:center;margin-top:24px">
+    <a href="blog/" class="btn-outline">View all posts</a>
+  </div>
+</section>
+
+<div class="divider" aria-hidden="true"></div>
+
+<!-- Contact -->
+<section class="page-section" id="contact" aria-labelledby="contact-title">
+  <div class="contact-box">
+    <h2 class="contact-title" id="contact-title">Let's Work <span class="accent">Together</span></h2>
+    <p class="contact-sub">Open to remote and in-office data analyst roles. I’ll respond within 24 hours.</p>
+    <div class="contact-actions">
+      <a href="mailto:tinonetsanaa@gmail.com" class="btn-primary">Email Me</a>
+      <a href="assets/cv/alfred-shingai-cv.pdf" class="btn-outline" target="_blank" rel="noopener">Download CV</a>
+    </div>
+    <div class="social-links" aria-label="Social links">
+      <a href="mailto:tinonetsanaa@gmail.com" class="social-link"><svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg>Email</a>
+      <a href="https://github.com/alfredshingai" class="social-link" target="_blank" rel="noopener noreferrer"><img src="https://cdn.simpleicons.org/github/536171" width="13" height="13" alt="GitHub logo" loading="lazy"/>GitHub</a>
+      <a href="https://www.linkedin.com/in/alfred-shingai" class="social-link" target="_blank" rel="noopener noreferrer"><img src="https://cdn.simpleicons.org/linkedin/536171" width="13" height="13" alt="LinkedIn logo" loading="lazy"/>LinkedIn</a>
+      <a href="https://x.com/alfredshingai" class="social-link" target="_blank" rel="noopener noreferrer"><img src="https://cdn.simpleicons.org/x/536171" width="13" height="13" alt="X logo" loading="lazy"/>X</a>
     </div>
   </div>
 </section>
 
-<section id="contact" class="section" style="text-align:center">
-  <h2 style="font-size:clamp(32px,5vw,56px);letter-spacing:-0.05em">Let’s build something.</h2>
-  <p class="lead" style="margin:16px auto 0;max-width:48ch">Open to interesting problems, collaborations, and conversations about web, data, or the next book you think I should read.</p>
-  <div style="margin-top:32px;display:flex;justify-content:center;gap:12px;flex-wrap:wrap">
-    <a href="mailto:tinonetsanaa@gmail.com" class="btn-primary">Email me</a>
-    <a href="https://github.com/alfredshingai" target="_blank" rel="noreferrer" class="btn-outline" style="border-color:var(--line);color:var(--ink)">GitHub</a>
-    <a href="https://www.linkedin.com/in/alfred-shingai" target="_blank" rel="noreferrer" class="btn-outline" style="border-color:var(--line);color:var(--ink)">LinkedIn</a>
-  </div>
-</section>
-</main>
-
-<footer class="footer">
+<footer class="site-footer">
   <span>© 2026 Alfred Shingai</span>
-  <span>Harare, Zimbabwe</span>
-  <span>Built properly · Light only</span>
+  <span><a href="https://statlab-zim.streamlit.app" target="_blank" rel="noopener noreferrer">StatLab Zim ↗</a> · <a href="https://github.com/alfredshingai">GitHub</a></span>
+  <span>alfredshingai.github.io</span>
 </footer>
 
-<script src="assets/main.js"></script>
+<script>
+// Reveal
+const obs=new IntersectionObserver((entries)=>{entries.forEach((e,i)=>{if(e.isIntersecting) setTimeout(()=>e.target.classList.add('visible'),i*60)})},{threshold:0.08});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+// Nav toggle + active + focus
+const toggle=document.getElementById('nav-toggle');
+const links=document.getElementById('nav-links');
+toggle.addEventListener('click',()=>{const open=links.classList.toggle('open');toggle.classList.toggle('open',open);toggle.setAttribute('aria-expanded',open)});
+links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{links.classList.remove('open');toggle.classList.remove('open');toggle.setAttribute('aria-expanded','false')}));
+toggle.addEventListener('keydown',e=>{if(e.key==='Escape'){links.classList.remove('open');toggle.classList.remove('open');toggle.setAttribute('aria-expanded','false');toggle.focus()}});
+// Scroll spy for active
+const sections=document.querySelectorAll('section[id], header[id]');
+const navItems=document.querySelectorAll('.nav-links a[data-nav]');
+const spy=new IntersectionObserver(entries=>{entries.forEach(entry=>{if(entry.isIntersecting){const id=entry.target.id;navItems.forEach(a=>a.classList.toggle('active',a.dataset.nav===id))}})},{rootMargin:'-45% 0px -45% 0px',threshold:0});
+sections.forEach(s=>spy.observe(s));
+if(location.pathname.includes('blog')){document.querySelectorAll('.nav-links a').forEach(a=>a.classList.remove('active'));const b=document.querySelector('.nav-links a[href="blog/"], .nav-links a[href="/blog/"], .nav-links a[data-nav="blog"]');if(b) b.classList.add('active')}
+// Progress
+const prog=document.getElementById('scroll-progress');
+window.addEventListener('scroll',()=>{const h=document.documentElement;const pct=(h.scrollTop/(h.scrollHeight-h.clientHeight))*100;prog.style.width=pct+'%'},{passive:true});
+// Filters for Works
+document.querySelectorAll('.filter-btn').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    const f=btn.dataset.filter;
+    document.querySelectorAll('.filter-btn').forEach(b=>{b.classList.remove('active');b.setAttribute('aria-pressed','false')});
+    btn.classList.add('active');btn.setAttribute('aria-pressed','true');
+    document.querySelectorAll('#works-grid .work-card').forEach(card=>{
+      const cats=card.dataset.category||'';
+      const show=f==='all'||cats.includes(f);
+      card.style.display=show?'':'none';
+    });
+  });
+});
+// Custom cursor
+const dot=document.querySelector('.cursor-dot'),ring=document.querySelector('.cursor-ring');
+const isTouch=window.matchMedia('(pointer: coarse)').matches;
+const prefersReduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+if(!isTouch && !prefersReduced && dot && ring){
+  document.body.classList.add('has-custom-cursor');
+  let mx=0,my=0,rx=0,ry=0;
+  document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;dot.style.transform=`translate(${mx}px,${my}px)`});
+  (function loop(){rx+=(mx-rx)*0.15;ry+=(my-ry)*0.15;ring.style.transform=`translate(${rx}px,${ry}px)`;requestAnimationFrame(loop)})();
+  document.addEventListener('mouseleave',()=>{dot.style.opacity='0';ring.style.opacity='0'});
+  document.addEventListener('mouseenter',()=>{dot.style.opacity='1';ring.style.opacity='1'});
+  document.querySelectorAll('a,button,.work-card,.skill-chip,.social-link').forEach(el=>{
+    el.addEventListener('mouseenter',()=>{const l=el.dataset.cursor||'';if(l){ring.dataset.label=l;ring.classList.add('has-label')}dot.classList.add('hover');ring.classList.add('hover')});
+    el.addEventListener('mouseleave',()=>{ring.dataset.label='';ring.classList.remove('has-label','hover');dot.classList.remove('hover')});
+  });
+}else{if(dot) dot.style.display='none';if(ring) ring.style.display='none'}
+</script>
 </body>
 </html>
