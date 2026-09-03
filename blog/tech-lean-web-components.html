@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="description" content="How I rebuilt my site with 7 CSS variables, Space Grotesk + JetBrains Mono, and no framework — warm paper, built properly."/>
+  <title>Lean Web Components: 7 variables, no framework — Alfred Shingai</title>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&family=JetBrains+Mono:wght@100..800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="../assets/styles.css"/>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="../" class="brand"><span class="brand-dot"></span><span class="brand-text"><span><span>Alfred</span><span>alfredshingai</span></span></span></a>
+    <nav class="nav-links"><a href="../#work">Work</a><a href="index.html" class="active">Blog</a></nav>
+    <a href="mailto:tinonetsanaa@gmail.com" class="email-pill">Email me</a>
+  </div>
+</header>
+<div class="header-spacer"></div>
+
+<article class="post">
+  <header class="post-header">
+    <p style="font-family:JetBrains Mono,monospace;font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:var(--accent)">Tech · 2026-08-10 · 5 min</p>
+    <h1>Lean Web Components: warm paper, 7 variables, no framework</h1>
+    <div class="post-meta"><span>Tech notes</span><span>Harare</span><span>Light only</span></div>
+  </header>
+  <div class="post-content">
+    <p>I love web development because it’s immediate. You change a variable, you see the paper warm up.</p>
+    <p>This site is intentionally lean — inspired by a warm, editorial palette but built light-only, no dark toggle, no framework, no build step for the blog. Just HTML, 7 CSS variables, and a little JS.</p>
+    <h2>The 7 variables</h2>
+    <pre>:root{
+  --paper:#f5f1e8;
+  --surface:#fcfaf3;
+  --ink:#1e1a13;
+  --muted:#6b6151;
+  --faint:#786d5b;
+  --line:#e1d9c6;
+  --accent:#b6491f;
+}</pre>
+    <p>That’s it. <code>paper</code> is the background you can feel, <code>ink</code> is the text you trust, <code>accent</code> is the one red that means “look here.” Light-only means I don’t maintain two worlds.</p>
+    <h2>Typography</h2>
+    <p><strong>Space Grotesk</strong> for UI and headlines — tight tracking, modern, friendly. <strong>JetBrains Mono</strong> for the small stuff: labels, dates, meta. Both variable fonts, both from Google Fonts, both system-fallback safe.</p>
+    <blockquote>Constraint is a feature. 12 columns, one accent, two fonts. The rest is whitespace.</blockquote>
+    <h2>Components, not pages</h2>
+    <p>Each work card is a <code>border:1px solid var(--line)</code> + <code>background:var(--surface)</code> + <code>border-radius:16px</code>. No shadow until hover. The timeline is a <code>grid: 11rem 1fr</code> with a top border. The blog is just <code>max-width:720px</code> + <code>line-height:1.75</code>.</p>
+    <p>The stack is simple: static HTML, <code>assets/styles.css</code>, <code>assets/main.js</code> for the reveal observer. Blog posts are static HTML too — no markdown build step yet. When I need it, I’ll add Eleventy, but not before I need it. Properly means <em>not adding what I don’t need</em>.</p>
+    <h2>Try it</h2>
+    <p>View source, copy the 7 variables, make them yours. Change <code>--accent</code> to <code>#0e7490</code> for a cooler paper, or <code>--paper</code> to <code>#fffcf8</code> for warmer. The web is still the best place to build properly.</p>
+    <p>Code is on <a href="https://github.com/alfredshingai" target="_blank" rel="noreferrer">GitHub</a> — light only, built properly.</p>
+  </div>
+  <div style="margin-top:48px;padding-top:24px;border-top:1px solid var(--line);display:flex;gap:16px;flex-wrap:wrap">
+    <a href="index.html" class="read-more">← Back to blog</a>
+    <a href="reflection-on-building-statlab.html" class="read-more">Next: Reflection on StatLab Zim →</a>
+  </div>
+</article>
+
+<footer class="footer"><span>© 2026 Alfred</span><span>Light only</span><span><a href="index.html">Blog</a></span></footer>
+<script src="../assets/main.js"></script>
+</body>
+</html>

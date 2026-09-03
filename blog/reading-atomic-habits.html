@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="description" content="Notes on Atomic Habits for an analyst who loves systems — 1% improvements in data cleaning and shipping."/>
+  <title>Atomic Habits — notes for an analyst — Alfred Shingai</title>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&family=JetBrains+Mono:wght@100..800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="../assets/styles.css"/>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="../" class="brand"><span class="brand-dot"></span><span class="brand-text"><span><span>Alfred</span><span>alfredshingai</span></span></span></a>
+    <nav class="nav-links"><a href="../#work">Work</a><a href="index.html" class="active">Blog</a></nav>
+    <a href="mailto:tinonetsanaa@gmail.com" class="email-pill">Email me</a>
+  </div>
+</header>
+<div class="header-spacer"></div>
+
+<article class="post">
+  <header class="post-header">
+    <p style="font-family:JetBrains Mono,monospace;font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:var(--accent)">Book · 2026-08-21 · 6 min</p>
+    <h1>Atomic Habits — notes for an analyst who loves systems</h1>
+    <div class="post-meta"><span>Book: James Clear, 2018</span><span>Rating: ★★★★★</span><span>Harare</span></div>
+  </header>
+  <div class="post-content">
+    <p>I read <em>Atomic Habits</em> between Power Query refreshes. The core idea is simple: you don’t rise to your goals, you fall to your systems. As a data analyst, that landed.</p>
+    <h2>1% in the cleaning room</h2>
+    <p>Clear argues for 1% daily improvements. My 1% looked like this: one Power Query step properly named, one DAX measure with a comment, one commit message that actually explains <em>why</em>. No heroic refactors — just <code>is_numeric_series</code> handling <code>StringDtype</code> today, <code>duplicate_row_count</code> tomorrow.</p>
+    <blockquote>“Every action is a vote for the type of person you wish to become.” — I started voting for “person who writes tests before features.”</blockquote>
+    <h2>Identity, not outcome</h2>
+    <p>The book reframes habits around identity. I’m not trying to “finish StatLab Zim.” I’m becoming someone who ships small, tested, documented tools. That identity made it easier to choose 7 CSS variables over a framework, light-only over dark-mode complexity, and a single-column work stack over a card grid.</p>
+    <h2>System for reading</h2>
+    <p>My system now: 30 minutes each morning, one chapter, one note in a CSV (yes, a CSV): <code>book,chapter,insight,action</code>. No Goodreads streak, just a file I can query with pandas. Analyst’s habit.</p>
+    <p>If you’ve read it — what 1% are you voting for this week? <a href="mailto:tinonetsanaa@gmail.com">Tell me</a>.</p>
+    <p>Next up: <em>Deep Work</em> — because light-only needs focus.</p>
+  </div>
+  <div style="margin-top:48px;padding-top:24px;border-top:1px solid var(--line);display:flex;gap:16px;flex-wrap:wrap">
+    <a href="index.html" class="read-more">← Back to blog</a>
+    <a href="tech-lean-web-components.html" class="read-more">Next: Lean Web Components →</a>
+  </div>
+</article>
+
+<footer class="footer"><span>© 2026 Alfred</span><span>Light only</span><span><a href="index.html">Blog</a></span></footer>
+<script src="../assets/main.js"></script>
+</body>
+</html>
